@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 
-const Navbar = ({ signedIn, onSignUpClick }) => {
+const Navbar = ({ signedIn, onSignUpClick, onSignInClick }) => {
     return (
         <AppBar color="primary" position="static">
             <Toolbar variant="regular">
@@ -20,7 +20,8 @@ const Navbar = ({ signedIn, onSignUpClick }) => {
                 {!signedIn &&
                     <>
                         <Box mr={1}>
-                            <Button name="isOpenSignUp" color="secondary" variant="contained" onClick={onSignUpClick}>Sign Up</Button>
+                            <Button color="secondary" variant="contained" onClick={onSignUpClick}>Sign Up</Button>
+                            <Button color="secondary" variant="contained" onClick={onSignInClick}>Sign In</Button>
                         </Box>
                     </>
                 }
