@@ -11,18 +11,22 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
+    root: {
+        background: 'linear-gradient(45deg, #F00000 30%, #DC281E 90%)'
+    },
     signUpButton: {
         marginRight: 10
-    }
+    },
+
 });
 
 const Navbar = ({ signedIn, onSignUpClick, onSignInClick }) => {
     const classes = useStyles();
     return (
-        <AppBar color="primary" position="static">
+        <AppBar className={classes.root} position="static">
             <Toolbar variant="regular">
                 <Box flexGrow={1}>
-                    <Typography color="inherit" variant="h6">{process.env.REACT_APP_NAME}</Typography>
+                    <Typography color="inherit" variant="h4">{process.env.REACT_APP_NAME}</Typography>
                 </Box>
 
                 {!signedIn &&
