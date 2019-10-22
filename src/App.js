@@ -12,19 +12,15 @@ import SignUpDialog from './components/Dialog/SignUpDialog';
 import SignInDialog from './components/Dialog/SignInDialog';
 
 //*Pages
-
+import Routes from './pages/Routes';
 
 //*MUI
 import Hidden from '@material-ui/core/Hidden';
 import theme from './theme';
 
 function App() {
-  const [signedIn] = useState(false);
+  const [signedIn] = useState(true);
   const [ready] = useState(true);
-  // const [dialog, setDialog] = useState({
-  //   isOpenSignUp: false,
-  //   isOpenSignIn: false
-  // });
   const [signUpDialog, setSignUpDialog] = useState(false)
   const [signInDialog, setSignInDialog] = useState(false)
 
@@ -57,6 +53,10 @@ function App() {
               onSignUpClick={openSignUpDialog}
               onSignInClick={openSignInDialog}
             />
+
+            <Routes signedIn={signedIn} />
+
+
 
             <Hidden only='xs'>
               <SignUpDialog
