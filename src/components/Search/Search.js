@@ -29,8 +29,8 @@ const Search = () => {
         <Paper className={classes.root}>
             <InputBase
                 className={classes.input}
-                placeholder="Search Google Maps"
-                inputProps={{ 'aria-label': 'search google maps' }}
+                placeholder="Search Registered Patients"
+                inputProps={{ 'aria-label': 'search patients' }}
             />
             <IconButton className={classes.iconButton} aria-label="search">
                 <SearchIcon />

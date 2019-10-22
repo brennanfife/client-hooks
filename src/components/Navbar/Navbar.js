@@ -9,6 +9,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles({
     root: {
@@ -28,6 +32,19 @@ const Navbar = ({ signedIn, onSignUpClick, onSignInClick }) => {
                 <Box flexGrow={1}>
                     <Typography color="inherit" variant="h4">{process.env.REACT_APP_NAME}</Typography>
                 </Box>
+
+                {signedIn &&
+                    <>
+                        <IconButton color="inherit">
+                            <Avatar alt="Avatar"  />
+                        </IconButton>
+        
+                        <Menu>
+                            <MenuItem>Settings</MenuItem>
+                            <MenuItem>Sign out</MenuItem>
+                        </Menu>
+                    </>
+                }
 
                 {!signedIn &&
                     <>
