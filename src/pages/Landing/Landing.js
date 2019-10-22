@@ -2,6 +2,9 @@ import React from 'react'
 
 import PropTypes from 'prop-types';
 
+//*Components
+import Search from '../../components/Search'
+
 //*MUI
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -28,6 +31,7 @@ const Landing = ({signedIn}) => {
             <div className={classes.center}>
                 <HomeIcon color="action" />
                 <Typography color="textSecondary" variant="h5">Home</Typography>
+                <Search />
             </div>
         );
     }
