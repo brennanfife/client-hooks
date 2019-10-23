@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import Loading from './components/Loading';
 import SignUpDialog from './components/Dialog/SignUpDialog';
 import SignInDialog from './components/Dialog/SignInDialog';
+// import DialogHost from './components/Dialog/DialogHost'; //!Added
 
 //*Pages
 import Routes from './pages/Routes';
@@ -19,26 +20,10 @@ import Hidden from '@material-ui/core/Hidden';
 import theme from './theme';
 
 function App() {
-  const [signedIn] = useState(true);
+  const [signedIn] = useState(false);
   const [ready] = useState(true);
   const [signUpDialog, setSignUpDialog] = useState(false)
   const [signInDialog, setSignInDialog] = useState(false)
-
-  const openSignUpDialog = () => {
-    setSignUpDialog(true);
-  }
-
-  const closeSignUpDialog = () => {
-    setSignUpDialog(false);
-  }
-
-  const openSignInDialog = () => {
-    setSignInDialog(true);
-  }
-
-  const closeSignInDialog = () => {
-    setSignInDialog(false);
-  }
 
   return (
       <ThemeProvider theme={theme}>
@@ -49,39 +34,39 @@ function App() {
           <>
             <Navbar
               signedIn={signedIn}
-              onSignUpClick={openSignUpDialog}
-              onSignInClick={openSignInDialog}
+              onSignUpClick={() => setSignUpDialog(true)}
+              onSignInClick={() => setSignInDialog(true)}
             />
 
             <Routes signedIn={signedIn} />
 
-
-
+            {/* SignUpDialog */}
             <Hidden only='xs'>
               <SignUpDialog
                 open={signUpDialog}
-                onClose={closeSignUpDialog}
+                onClose={() => setSignUpDialog(false)}
               />
             </Hidden>
             <Hidden only={['sm', 'md', 'lg', 'xl']}>
               <SignUpDialog
                 fullScreen
                 open={signUpDialog}
-                onClose={closeSignUpDialog}
+                onClose={() => setSignUpDialog(false)}
               />
             </Hidden>
 
-            <Hidden only="xs">
+            {/* SignInDialog */}
+            <Hidden only='xs'>
               <SignInDialog
                 open={signInDialog}
-                onClose={closeSignInDialog}
+                onClose={() => setSignInDialog(false)}
               />
             </Hidden>
             <Hidden only={['sm', 'md', 'lg', 'xl']}>
               <SignInDialog
                 fullScreen
                 open={signInDialog}
-                onClose={closeSignInDialog}
+                onClose={() => setSignInDialog(false)}
               />
             </Hidden>
           </>
