@@ -8,8 +8,8 @@
     "firebase": "^7.2.1",
     "mdi-material-ui": "^6.8.0",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "typeface-roboto": "0.0.75"
